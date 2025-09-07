@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$KINDNESS Coin - Spreading Kindness Through Crypto</title>
+    <meta name="description" content="Join the $KINDNESS movement! Community-driven meme coin that has already donated over $20,000 LIVE on pump.fun to help streamers and creators achieve their dreams.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .contract-banner {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            color: white;
+        }
+        
+        .contract-text {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .contract-address {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            background: rgba(255,255,255,0.25);
+            padding: 8px 15px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 5px 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .copy-btn {
+            background: rgba(255,255,255,0.9);
+            border: none;
+            color: #ff6b6b;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .copy-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .featured-video-section {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+            pointer-events: none;
+        }
+        
+        .featured-video-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .featured-video-title {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .featured-video-subtitle {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .video-embed-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            margin: 2rem 0;
+        }
+        
+        .twitter-embed {
+            margin: 0 auto !important;
+        }
+        
+        /* Responsive iframe container */
+        .embed-responsive {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 50%, #fff5f5 100%);
+        }
+        
+        .brand-image-container {
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .brand-image {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .brand-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 10s ease-in-out infinite;
+            color: #ff6b6b;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.08; }
+            25% { transform: translateY(-40px) rotate(5deg); opacity: 0.15; }
+            50% { transform: translateY(-80px) rotate(-5deg); opacity: 0.1; }
+            75% { transform: translateY(-40px) rotate(3deg); opacity: 0.12; }
+        }
+        
+        h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin: 2rem 0 1rem;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            margin: 1rem 0 2rem;
+            color: #4a4a4a;
+            font-weight: 500;
+        }
+        
+        .mission-highlight {
+            background: linear-gradient(135deg, #ff6b6b15, #ffd93d15);
+            padding: 2rem 3rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            border: 2px solid #ff6b6b30;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d2d2d;
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.1);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #ff6b6b;
+            border: 3px solid #ff6b6b;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .video-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            margin-top: -3rem;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 2;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .video-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #2d2d2d;
+            font-weight: 800;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .video-card {
+            background: linear-gradient(135deg, #f8f9ff, #fff5f5);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.1);
+            border-color: #ff6b6b30;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b6b15, #ffd93d15);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            border: 2px dashed #ff6b6b30;
+            transition: all 0.3s ease;
+        }
+        
+        .video-placeholder:hover {
+            border-color: #ff6b6b50;
+            background: linear-gradient(135deg, #ff6b6b20, #ffd93d20);
+        }
+        
+        .video-placeholder-text {
+            color: #ff6b6b;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .video-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d2d2d;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* Responsive video iframe styling */
+        .video-responsive {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        
+        .video-responsive iframe,
+        .video-responsive video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            color: #2d2d2d;
+            font-weight: 800;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin: 5rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(255, 107, 107, 0.1);
+            border-color: #ff6b6b30;
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            display: block;
+            color: #ff6b6b;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #2d2d2d;
+            font-weight: 700;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .tokenomics {
+            background: linear-gradient(135deg, #f8f9ff, #fff5f5);
+            border-radius: 30px;
+            padding: 5rem 4rem;
+            margin: 5rem 0;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+        }
+        
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .tokenomics-item {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f8f8f8;
+        }
+        
+        .tokenomics-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 107, 107, 0.1);
+            border-color: #ff6b6b30;
+        }
+        
+        .percentage {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .tokenomics-item h3 {
+            color: #2d2d2d;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .tokenomics-item p {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .how-to-buy {
+            background: white;
+            border-radius: 30px;
+            padding: 5rem 4rem;
+            margin: 5rem 0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .step {
+            background: linear-gradient(135deg, #f8f9ff, #fff5f5);
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.1);
+            border-color: #ff6b6b30;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-weight: 900;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        .step h3 {
+            color: #2d2d2d;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .step p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        .social-section {
+            background: linear-gradient(135deg, #f8f9ff, #fff5f5);
+            border-radius: 30px;
+            padding: 5rem 4rem;
+            margin: 5rem 0;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            background: white;
+            color: #ff6b6b;
+            padding: 2rem;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border: 2px solid #f8f8f8;
+        }
+        
+        .social-link:hover {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: white;
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.3);
+        }
+        
+        .brand-showcase {
+            margin: 4rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .brand-showcase img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .brand-showcase img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 80px rgba(255, 107, 107, 0.15);
+        }
+        
+        .developer-section {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: white;
+            border-radius: 30px;
+            padding: 5rem 4rem;
+            margin: 5rem 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .developer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(255, 217, 61, 0.1));
+            pointer-events: none;
+        }
+        
+        .developer-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .developer-section h2 {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .developer-intro {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 4rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255, 107, 107, 0.5);
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .tiktok-highlight {
+            background: rgba(255, 107, 107, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+        
+        .tiktok-handle {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .reach-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .reach-item {
+            text-align: center;
+        }
+        
+        .reach-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffd93d;
+            display: block;
+        }
+        
+        .reach-text {
+            font-size: 1rem;
+            color: #c0c0c0;
+            margin-top: 0.5rem;
+        }
+        
+        .developer-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .tiktok-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .tiktok-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+            color: white;
+        }
+        
+        /* Update indicator for keeping stats current */
+        .last-updated {
+            text-align: center;
+            margin-top: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #2d2d2d, #4a4a4a);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+        
+        footer p {
+            margin: 1rem 0;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .contract-banner {
+                font-size: 0.85rem;
+                padding: 12px;
+            }
+            
+            .contract-address {
+                font-size: 0.75rem;
+                display: block;
+                margin: 8px 0;
+            }
+            
+            .brand-image {
+                max-width: 250px;
+            }
+            
+            .tokenomics, .how-to-buy, .social-section {
+                padding: 3rem 2rem;
+            }
+            
+            .video-section {
+                padding: 3rem 2rem;
+                margin-top: -2rem;
+            }
+            
+            .video-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .featured-video-section {
+                padding: 2rem 1rem;
+            }
+            
+            .featured-video-title {
+                font-size: 2rem;
+            }
+            
+            .featured-video-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .video-embed-container {
+                padding: 1.5rem;
+            }
+            
+            .developer-section {
+                padding: 3rem 2rem;
+                margin: 3rem 0;
+            }
+            
+            .developer-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .developer-intro {
+                font-size: 1.2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .stat-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .reach-stats {
+                gap: 1.5rem;
+            }
+            
+            .reach-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contract-banner">
+        <div class="contract-text">📊 $KINDNESS Contract Address</div>
+        <span class="contract-address">9eyegrQF3JnEnEnGQKn2M7EB7H1j1ZTq8Sb65738wUMG</span>
+        <button class="copy-btn" onclick="copyContract()">Copy Address</button>
+    </div>
+
+    <div class="floating-icons">
+        <div class="floating-icon" style="top: 15%; left: 10%; animation-delay: 0s;">💝</div>
+        <div class="floating-icon" style="top: 25%; right: 15%; animation-delay: 1.5s;">🚀</div>
+        <div class="floating-icon" style="top: 55%; left: 8%; animation-delay: 3s;">💖</div>
+        <div class="floating-icon" style="top: 70%; right: 12%; animation-delay: 4.5s;">✨</div>
+        <div class="floating-icon" style="top: 80%; left: 20%; animation-delay: 6s;">💎</div>
+        <div class="floating-icon" style="top: 40%; right: 25%; animation-delay: 7.5s;">🌟</div>
+        <div class="floating-icon" style="top: 60%; left: 75%; animation-delay: 9s;">💫</div>
+    </div>
+
+    <!-- Featured Video Section -->
+    <section class="featured-video-section">
+        <div class="featured-video-content">
+            <h2 class="featured-video-title">🎬 $KINDNESS in Action</h2>
+            <p class="featured-video-subtitle">
+                Watch how we're spreading kindness and changing lives through cryptocurrency
+            </p>
+            
+            <div class="video-embed-container">
+                <div class="embed-responsive">
+                    <blockquote class="twitter-tweet" data-theme="light" data-width="550" data-dnt="true">
+                        <p lang="en" dir="ltr">
+                            <a href="https://twitter.com/i/status/1964718716920406107">Loading tweet...</a>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+            
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-top: 1rem;">
+                This is what $KINDNESS is all about - real impact, real people, real change 💝
+            </p>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="brand-image-container">
+            <img src="./attached_assets/Screenshot 2025-09-07 at 1.53.53 PM_1757267670615.png" alt="$KINDNESS Coin Logo" class="brand-image">
+        </div>
+        
+        <h1>$KINDNESS</h1>
+        <p class="subtitle">Spreading Kindness Through Cryptocurrency</p>
+        
+        <div class="mission-highlight">
+            🎉 Already donated over $20,000 to help streamers & creators achieve their dreams! 🎉
+        </div>
+        
+        <p style="font-size: 1.3rem; margin: 2rem 0; max-width: 650px; color: #555;">
+            Join the movement that's changing lives one transaction at a time. $KINDNESS isn't just a meme coin – it's a community dedicated to supporting small content creators and spreading positivity through crypto.
+        </p>
+        
+        <div class="cta-buttons">
+            <a href="#how-to-buy" class="btn btn-primary">Buy $KINDNESS Now</a>
+            <a href="#about" class="btn btn-secondary">Learn Our Mission</a>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <h2>Watch $KINDNESS in Action</h2>
+        <p style="text-align: center; font-size: 1.3rem; margin-bottom: 3rem; color: #555;">
+            See how we're spreading kindness and supporting creators through cryptocurrency
+        </p>
+        
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <div class="video-placeholder-text">
+                        📹 Add Your Video Here<br>
+                        <span style="font-size: 0.9rem; opacity: 0.8;">Replace this with iframe or video embed</span>
+                    </div>
+                </div>
+                <div class="video-title">Creator Success Story</div>
+                <div class="video-description">Feature stories of creators you've helped through $KINDNESS donations</div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <div class="video-placeholder-text">
+                        📹 Add Your Video Here<br>
+                        <span style="font-size: 0.9rem; opacity: 0.8;">Replace this with iframe or video embed</span>
+                    </div>
+                </div>
+                <div class="video-title">Community Highlights</div>
+                <div class="video-description">Showcase your community activities and kindness initiatives in action</div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <div class="video-placeholder-text">
+                        📹 Add Your Video Here<br>
+                        <span style="font-size: 0.9rem; opacity: 0.8;">Replace this with iframe or video embed</span>
+                    </div>
+                </div>
+                <div class="video-title">How to Buy Tutorial</div>
+                <div class="video-description">Step-by-step video guide on purchasing $KINDNESS tokens</div>
+            </div>
+        </div>
+        
+        <!-- Example of how to add videos - uncomment and replace with your video URLs -->
+        <!-- 
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-responsive">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Your Video Title</div>
+                <div class="video-description">Your video description</div>
+            </div>
+        </div>
+        -->
+    </section>
+
+    <section id="about" class="section">
+        <h2>Why $KINDNESS?</h2>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">💖</div>
+                <h3>Real Impact</h3>
+                <p>We've already donated over $20,000 directly to small streamers and content creators, helping them buy equipment, pay bills, and pursue their passions. Every transaction contributes to our creator fund.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Community-Driven</h3>
+                <p>Built by creators, for creators. Our community votes on which streamers and content creators receive funding. Together, we decide how to spread kindness most effectively.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Fresh Launch</h3>
+                <p>Launched September 6, 2025, with immediate impact. Get in early and be part of a movement that's already changing lives while building something extraordinary together.</p>
+            </div>
+        </div>
+
+        <div class="brand-showcase">
+            <img src="./attached_assets/Screenshot 2025-09-07 at 1.53.42 PM_1757267670615.png" alt="$KINDNESS Brand Image">
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section class="developer-section">
+        <div class="developer-content">
+            <h2>Meet the Developer</h2>
+            <div class="developer-intro">
+                Behind $KINDNESS is KarveTV, a content creator with massive reach and a genuine passion for supporting fellow creators. With millions of followers across platforms, the vision for $KINDNESS comes from understanding exactly what small creators need to succeed.
+            </div>
+
+            <div class="tiktok-highlight">
+                <span class="tiktok-handle">@karvetv</span>
+                <p style="color: #e0e0e0; font-size: 1.2rem; margin-bottom: 1rem;">
+                    Massive TikTok presence driving the $KINDNESS movement
+                </p>
+                <div class="reach-stats">
+                    <div class="reach-item">
+                        <span class="reach-number" id="followersCount">1.2M</span>
+                        <div class="reach-text">Followers</div>
+                    </div>
+                    <div class="reach-item">
+                        <span class="reach-number" id="likesCount">63.8M</span>
+                        <div class="reach-text">Likes</div>
+                    </div>
+                    <div class="reach-item">
+                        <span class="reach-number" id="followingCount">275</span>
+                        <div class="reach-text">Following</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">1.2M+</span>
+                    <div class="stat-label">Community Reach</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">63.8M+</span>
+                    <div class="stat-label">Total Engagement</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$20K+</span>
+                    <div class="stat-label">Already Donated</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Sep 2025</span>
+                    <div class="stat-label">Launch Date</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <p style="font-size: 1.3rem; color: #e0e0e0; line-height: 1.6; max-width: 700px; margin: 0 auto;">
+                    This isn't just another meme coin. With over 1.2 million followers and 63.8 million likes, @karvetv understands the creator economy and has the reach to make $KINDNESS a movement that genuinely changes lives.
+                </p>
+            </div>
+
+            <div class="developer-cta">
+                <a href="https://tiktok.com/@karvetv" target="_blank" class="tiktok-btn">
+                    Follow @karvetv on TikTok
+                </a>
+            </div>
+
+            <div class="last-updated" id="statsUpdated">
+                Stats last updated: September 2025 • <a href="javascript:void(0)" onclick="updateStats()" style="color: #ff6b6b; text-decoration: none;">Refresh Stats</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="tokenomics">
+            <h2>Tokenomics</h2>
+            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem; color: #555;">
+                Transparent distribution designed for maximum community impact and long-term sustainability.
+            </p>
+            <div class="tokenomics-grid">
+                <div class="tokenomics-item">
+                    <div class="percentage">85%</div>
+                    <h3>Community Pool</h3>
+                    <p>Fair distribution to holders and community members</p>
+                </div>
+                <div class="tokenomics-item">
+                    <div class="percentage">10%</div>
+                    <h3>Creator Fund</h3>
+                    <p>Direct donations to streamers and content creators</p>
+                </div>
+                <div class="tokenomics-item">
+                    <div class="percentage">3%</div>
+                    <h3>Development</h3>
+                    <p>Platform improvements and feature development</p>
+                </div>
+                <div class="tokenomics-item">
+                    <div class="percentage">2%</div>
+                    <h3>Marketing</h3>
+                    <p>Growing our community and spreading kindness</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-buy" class="section">
+        <div class="how-to-buy">
+            <h2>How to Buy $KINDNESS</h2>
+            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 3rem; color: #555;">
+                Join the kindness movement in 4 simple steps. Start spreading positivity today!
+            </p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Set Up Your Wallet</h3>
+                    <p>Download and install a Solana wallet like Phantom, Solflare, or any compatible wallet. Create your account and secure your seed phrase safely.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get SOL Tokens</h3>
+                    <p>Purchase SOL from any major exchange (Coinbase, Binance, etc.) and transfer it to your wallet. You'll need SOL to swap for $KINDNESS.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Swap for $KINDNESS</h3>
+                    <p>Use Jupiter, Raydium, or another Solana DEX to swap your SOL for $KINDNESS using our contract address above.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Spread Kindness!</h3>
+                    <p>Hold your tokens, join our community, and help us vote on which creators to support next. Together, we're making crypto kinder!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="social-section">
+            <h2>Join Our Community</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; color: #555;">
+                Connect with fellow kindness spreaders and stay updated on our latest creator support initiatives.
+            </p>
+            <div class="social-links">
+                <a href="https://x.com/ColeCaetano_" class="social-link" title="Follow Cole on X (Twitter)" target="_blank">𝕏</a>
+                <a href="https://tiktok.com/@karvetv" class="social-link" title="Follow KarveTV on TikTok" target="_blank">📱</a>
+                <a href="https://t.me/KindnessCoinSOL" class="social-link" title="Join our Telegram" target="_blank">📞</a>
+                <a href="https://x.com/i/communities/1831077916763824381" class="social-link" title="Join X Community" target="_blank">👥</a>
+            </div>
+            <p style="margin-top: 3rem; color: #666; font-size: 1.2rem; line-height: 1.7;">
+                Together, we're proving that cryptocurrency can be a force for good. Every holder is part of our mission to spread kindness and support creators worldwide. 💝
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-size: 1.3rem; font-weight: bold;">&copy; 2025 $KINDNESS Coin</p>
+        <p style="font-size: 1.1rem;">Spreading kindness, one transaction at a time 💝</p>
+        <p style="margin-top: 2rem; font-family: 'Courier New', monospace; opacity: 0.8;">
+            Contract: 9eyegrQF3JnEnEnGQKn2M7EB7H1j1ZTq8Sb65738wUMG
+        </p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">
+            Always DYOR (Do Your Own Research) • Not Financial Advice • Crypto is risky
+        </p>
+    </footer>
+
+    <script>
+        function copyContract() {
+            const address = '9eyegrQF3JnEnEnGQKn2M7EB7H1j1ZTq8Sb65738wUMG';
+            navigator.clipboard.writeText(address).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                btn.style.background = 'rgba(16, 185, 129, 0.9)';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = 'rgba(255,255,255,0.9)';
+                }, 3000);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = address;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 3000);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add entrance animations when scrolling
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.section, .feature-card, .step, .tokenomics-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Set random delays for floating icons
+        document.querySelectorAll('.floating-icon').forEach((icon, index) => {
+            icon.style.animationDelay = `${index * 1.5}s`;
+        });
+
+        // Add loading effect for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', () => {
+                img.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+        });
+
+        // Stats update functionality
+        function updateStats() {
+            // This function can be enhanced to fetch real-time stats from TikTok API
+            // For now, it provides a framework for manual updates
+            const now = new Date();
+            const dateString = now.toLocaleDateString('en-US', { 
+                month: 'long', 
+                year: 'numeric' 
+            });
+            
+            document.getElementById('statsUpdated').innerHTML = `
+                Stats last updated: ${dateString} • 
+                <a href="javascript:void(0)" onclick="updateStats()" style="color: #ff6b6b; text-decoration: none;">Refresh Stats</a>
+            `;
+            
+            // Add animation to show update
+            const statsCards = document.querySelectorAll('.reach-number');
+            statsCards.forEach(card => {
+                card.style.transform = 'scale(1.1)';
+                card.style.color = '#ff6b6b';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                    card.style.color = '#ffd93d';
+                }, 300);
+            });
+            
+            // You can manually update the stats here when needed:
+            // document.getElementById('followersCount').textContent = 'NEW_FOLLOWER_COUNT';
+            // document.getElementById('likesCount').textContent = 'NEW_LIKES_COUNT';
+            // document.getElementById('followingCount').textContent = 'NEW_FOLLOWING_COUNT';
+        }
+
+        // Auto-refresh stats on page load (for manual updates)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stats on load
+            setTimeout(() => {
+                const statNumbers = document.querySelectorAll('.stat-number, .reach-number');
+                statNumbers.forEach((stat, index) => {
+                    setTimeout(() => {
+                        stat.style.transform = 'scale(1.05)';
+                        setTimeout(() => {
+                            stat.style.transform = 'scale(1)';
+                        }, 200);
+                    }, index * 100);
+                });
+            }, 500);
+        });
+
+        // Load Twitter widgets script for tweet embedding
+        (function() {
+            if (window.twttr) {
+                return;
+            }
+            
+            const script = document.createElement('script');
+            script.id = 'twitter-wjs';
+            script.src = 'https://platform.twitter.com/widgets.js';
+            script.async = true;
+            script.charset = 'utf-8';
+            
+            script.onload = function() {
+                if (window.twttr && window.twttr.widgets) {
+                    // Create the embedded tweet
+                    const tweetContainer = document.querySelector('.embed-responsive');
+                    if (tweetContainer) {
+                        // Clear the container
+                        tweetContainer.innerHTML = '';
+                        
+                        // Create the tweet embed
+                        window.twttr.widgets.createTweet(
+                            '1964718716920406107',
+                            tweetContainer,
+                            {
+                                theme: 'light',
+                                width: 550,
+                                height: 400,
+                                dnt: true,
+                                conversation: 'none',
+                                cards: 'visible'
+                            }
+                        ).then(function(el) {
+                            if (el) {
+                                // Tweet loaded successfully
+                                el.style.margin = '0 auto';
+                            } else {
+                                // Fallback if tweet doesn't load
+                                tweetContainer.innerHTML = `
+                                    <div style="padding: 2rem; text-align: center; color: #666;">
+                                        <p style="font-size: 1.2rem; margin-bottom: 1rem;">📹 Featured Video</p>
+                                        <p>Loading $KINDNESS video content...</p>
+                                        <a href="https://x.com/i/status/1964718716920406107" 
+                                           target="_blank" 
+                                           style="color: #ff6b6b; text-decoration: none; font-weight: bold;">
+                                           View on X (Twitter) →
+                                        </a>
+                                    </div>
+                                `;
+                            }
+                        });
+                    }
+                }
+            };
+            
+            document.head.appendChild(script);
+        })();
+    </script>
+</body>
+</html>
