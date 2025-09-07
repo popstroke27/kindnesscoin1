@@ -136,6 +136,49 @@
             align-items: center;
             justify-content: center;
         }
+        
+        .community-section {
+            background: #f8f9ff;
+            border-radius: 30px;
+            padding: 5rem 4rem;
+            margin: 5rem 0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+        }
+        
+        .community-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            font-weight: 800;
+        }
+        
+        .donation-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .donation-post {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+        
+        .donation-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
 
         .hero {
             min-height: 80vh;
@@ -841,9 +884,14 @@
                 font-size: 2.5rem;
             }
             
-            .video-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .donation-posts-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .donation-post {
+                padding: 1rem;
+                min-height: 350px;
             }
             
             .featured-video-section {
@@ -915,29 +963,6 @@
         <div class="floating-icon" style="top: 60%; left: 75%; animation-delay: 9s;">💫</div>
     </div>
 
-    <!-- Featured Video Section -->
-    <section class="featured-video-section">
-        <div class="featured-video-content">
-            <h2 class="featured-video-title">🎬 $KINDNESS in Action</h2>
-            <p class="featured-video-subtitle">
-                Watch how we're spreading kindness and changing lives through cryptocurrency
-            </p>
-            
-            <div class="video-embed-container">
-                <div class="embed-responsive">
-                    <blockquote class="twitter-tweet" data-theme="light" data-width="550" data-dnt="true">
-                        <p lang="en" dir="ltr">
-                            <a href="https://twitter.com/i/status/1964718716920406107">Loading tweet...</a>
-                        </p>
-                    </blockquote>
-                </div>
-            </div>
-            
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-top: 1rem;">
-                This is what $KINDNESS is all about - real impact, real people, real change 💝
-            </p>
-        </div>
-    </section>
 
     <section class="hero">
         <div class="brand-image-container">
@@ -961,62 +986,78 @@
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section class="video-section">
-        <h2>Watch $KINDNESS in Action</h2>
+    <!-- Community Donation Posts -->
+    <section class="community-section">
+        <h2>Community Donation Posts</h2>
         <p style="text-align: center; font-size: 1.3rem; margin-bottom: 3rem; color: #555;">
-            See how we're spreading kindness and supporting creators through cryptocurrency
+            Real stories from creators whose lives have been changed by $KINDNESS donations
         </p>
         
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-placeholder">
-                    <div class="video-placeholder-text">
-                        📹 Add Your Video Here<br>
-                        <span style="font-size: 0.9rem; opacity: 0.8;">Replace this with iframe or video embed</span>
-                    </div>
-                </div>
-                <div class="video-title">Creator Success Story</div>
-                <div class="video-description">Feature stories of creators you've helped through $KINDNESS donations</div>
+        <div class="donation-posts-grid">
+            <div class="donation-post">
+                <blockquote class="twitter-tweet" data-theme="light" data-width="320" data-dnt="true">
+                    <p lang="en" dir="ltr">
+                        <a href="https://twitter.com/i/status/1964570847059886211">Loading donation post...</a>
+                    </p>
+                </blockquote>
             </div>
-            
-            <div class="video-card">
-                <div class="video-placeholder">
-                    <div class="video-placeholder-text">
-                        📹 Add Your Video Here<br>
-                        <span style="font-size: 0.9rem; opacity: 0.8;">Replace this with iframe or video embed</span>
-                    </div>
-                </div>
-                <div class="video-title">Community Highlights</div>
-                <div class="video-description">Showcase your community activities and kindness initiatives in action</div>
+            <div class="donation-post">
+                <blockquote class="twitter-tweet" data-theme="light" data-width="320" data-dnt="true">
+                    <p lang="en" dir="ltr">
+                        <a href="https://twitter.com/i/status/1964600592040669219">Loading donation post...</a>
+                    </p>
+                </blockquote>
             </div>
-            
-            <div class="video-card">
-                <div class="video-placeholder">
-                    <div class="video-placeholder-text">
-                        📹 Add Your Video Here<br>
-                        <span style="font-size: 0.9rem; opacity: 0.8;">Replace this with iframe or video embed</span>
-                    </div>
-                </div>
-                <div class="video-title">How to Buy Tutorial</div>
-                <div class="video-description">Step-by-step video guide on purchasing $KINDNESS tokens</div>
+            <div class="donation-post">
+                <blockquote class="twitter-tweet" data-theme="light" data-width="320" data-dnt="true">
+                    <p lang="en" dir="ltr">
+                        <a href="https://twitter.com/i/status/1964634776884932884">Loading donation post...</a>
+                    </p>
+                </blockquote>
             </div>
-        </div>
-        
-        <!-- Example of how to add videos - uncomment and replace with your video URLs -->
-        <!-- 
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-responsive">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Your Video Title</div>
-                <div class="video-description">Your video description</div>
+            <div class="donation-post">
+                <blockquote class="twitter-tweet" data-theme="light" data-width="320" data-dnt="true">
+                    <p lang="en" dir="ltr">
+                        <a href="https://twitter.com/i/status/1964630882427568539">Loading donation post...</a>
+                    </p>
+                </blockquote>
+            </div>
+            <div class="donation-post">
+                <blockquote class="twitter-tweet" data-theme="light" data-width="320" data-dnt="true">
+                    <p lang="en" dir="ltr">
+                        <a href="https://twitter.com/i/status/1964621086513152328">Loading donation post...</a>
+                    </p>
+                </blockquote>
+            </div>
+            <div class="donation-post">
+                <blockquote class="twitter-tweet" data-theme="light" data-width="320" data-dnt="true">
+                    <p lang="en" dir="ltr">
+                        <a href="https://twitter.com/i/status/1964590415841198452">Loading donation post...</a>
+                    </p>
+                </blockquote>
             </div>
         </div>
-        -->
     </section>
+    
+    <!-- Community Reach Stats -->
+    <div class="stats-grid" style="margin: 4rem auto; max-width: 1200px; padding: 0 2rem;">
+        <div class="stat-card">
+            <span class="stat-number">1.2M+</span>
+            <div class="stat-label">Community Reach</div>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">63.8M+</span>
+            <div class="stat-label">Total Engagement</div>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">$20K+</span>
+            <div class="stat-label">Already Donated</div>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">Sep 2025</span>
+            <div class="stat-label">Launch Date</div>
+        </div>
+    </div>
 
     <section id="about" class="section">
         <h2>Why $KINDNESS?</h2>
@@ -1075,25 +1116,6 @@
                 </div>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">1.2M+</span>
-                    <div class="stat-label">Community Reach</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">63.8M+</span>
-                    <div class="stat-label">Total Engagement</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">$20K+</span>
-                    <div class="stat-label">Already Donated</div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">Sep 2025</span>
-                    <div class="stat-label">Launch Date</div>
-                </div>
-            </div>
-
             <div style="text-align: center; margin: 3rem 0;">
                 <p style="font-size: 1.3rem; color: #e0e0e0; line-height: 1.6; max-width: 700px; margin: 0 auto;">
                     This isn't just another meme coin. With over 1.2 million followers and 63.8 million likes, @karvetv understands the creator economy and has the reach to make $KINDNESS a movement that genuinely changes lives.
@@ -1112,6 +1134,25 @@
         </div>
     </section>
 
+    <!-- Featured Video Section -->
+    <section class="featured-video-section">
+        <div class="featured-video-content">
+            <div class="video-embed-container">
+                <div class="embed-responsive">
+                    <blockquote class="twitter-tweet" data-theme="light" data-width="550" data-dnt="true">
+                        <p lang="en" dir="ltr">
+                            <a href="https://twitter.com/TBC_on_X/status/1964718716920406107">Loading tweet...</a>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+            
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-top: 1rem;">
+                Watch kindness in action - real impact, real people, real change 💝
+            </p>
+        </div>
+    </section>
+
     <section class="section">
         <div class="tokenomics">
             <h2>Tokenomics</h2>
@@ -1120,24 +1161,9 @@
             </p>
             <div class="tokenomics-grid">
                 <div class="tokenomics-item">
-                    <div class="percentage">85%</div>
-                    <h3>Community Pool</h3>
-                    <p>Fair distribution to holders and community members</p>
-                </div>
-                <div class="tokenomics-item">
-                    <div class="percentage">10%</div>
+                    <div class="percentage">100%</div>
                     <h3>Creator Fund</h3>
-                    <p>Direct donations to streamers and content creators</p>
-                </div>
-                <div class="tokenomics-item">
-                    <div class="percentage">3%</div>
-                    <h3>Development</h3>
-                    <p>Platform improvements and feature development</p>
-                </div>
-                <div class="tokenomics-item">
-                    <div class="percentage">2%</div>
-                    <h3>Marketing</h3>
-                    <p>Growing our community and spreading kindness</p>
+                    <p>All tokens dedicated to directly supporting streamers and content creators</p>
                 </div>
             </div>
         </div>
@@ -1352,7 +1378,7 @@
                         // Clear the container
                         tweetContainer.innerHTML = '';
                         
-                        // Create the tweet embed
+                        // Create the main featured tweet embed
                         window.twttr.widgets.createTweet(
                             '1964718716920406107',
                             tweetContainer,
@@ -1374,13 +1400,47 @@
                                     <div style="padding: 2rem; text-align: center; color: #666;">
                                         <p style="font-size: 1.2rem; margin-bottom: 1rem;">📹 Featured Video</p>
                                         <p>Loading $KINDNESS video content...</p>
-                                        <a href="https://x.com/i/status/1964718716920406107" 
+                                        <a href="https://x.com/TBC_on_X/status/1964718716920406107" 
                                            target="_blank" 
                                            style="color: #ff6b6b; text-decoration: none; font-weight: bold;">
                                            View on X (Twitter) →
                                         </a>
                                     </div>
                                 `;
+                            }
+                        });
+                        
+                        // Load all community donation posts
+                        const donationPosts = document.querySelectorAll('.donation-post .twitter-tweet');
+                        const videoIds = [
+                            '1964570847059886211',
+                            '1964600592040669219', 
+                            '1964634776884932884',
+                            '1964630882427568539',
+                            '1964621086513152328',
+                            '1964590415841198452'
+                        ];
+                        
+                        donationPosts.forEach((tweet, index) => {
+                            if (videoIds[index]) {
+                                const container = tweet.parentElement;
+                                container.innerHTML = '';
+                                
+                                window.twttr.widgets.createTweet(
+                                    videoIds[index],
+                                    container,
+                                    {
+                                        theme: 'light',
+                                        width: 320,
+                                        dnt: true,
+                                        conversation: 'none',
+                                        cards: 'visible'
+                                    }
+                                ).then(function(el) {
+                                    if (el) {
+                                        el.style.margin = '0 auto';
+                                    }
+                                });
                             }
                         });
                     }
